@@ -2,17 +2,21 @@
   align-items: center;
   text-align: center;
 }
-
-@mixin font ($r) /* Skapar en generell mixin, denna mixin kan ändras från klass till klass, jag har valt att man endast ska kunna välja font sizen genom att skriva $r i font sizen och i parenteserna efter jag skapat mixinen. Jag skrev $r för att ge det som man kan ändra en variabel. */
+@mixin textsize($r){ /* generell mixin för storleken på texten, jag har valt att man endast ska kunna välja font sizen genom att skriva $r i font sizen och i parenteserna efter jag skapat mixinen. Jag skrev $r för att ge det som man kan ändra en variabel. */
+  font-size: $r;
+}
+@mixin font () /* Skapar en generell mixin, denna mixin kan ändras från klass till klass, */
 { 
   font-family: Arial, Helvetica, sans-serif;
-  font-size: $r;
   color: white;
 }
+
 @mixin tema($r){ /* generell mixin där det enda man kan ändra är bakgrundsfärgen */
   background-color: $r;
-  width: 100%;
+}
+@mixin storlek{
   height: fit-content;
+  width: 100%;
 }
 @mixin bild(){ /* implementerad mixin som deffinerar höjden och bredden på bilderna jag har vid texterna i HTMLen.*/
   width:200px;
@@ -24,7 +28,8 @@
   grid-template-rows: repeat(1, 50%);/* skapar rader i griden och sedan bestämmer dess storlek*/
 }
 .grid-item{ /* Redigerar gruppen grid item, här har jag includat font och center, font är för att bestämma texttypen, textstorleken och färgen på texten.*/
-  @include font(25px);
+  @include font();
+  @include textsize(25px);
   @include center;
   margin-top: 1000px;/* bestämmer hur långt ifrån toppen av sidan denna klassen kommer att befinna sig*/
 }
@@ -35,13 +40,16 @@ body{ /* Här är bakgrunden till hemsidan, laggt in en egen bild istället för
   background-position:center;
 }
 .åsna{ /* hade slut på namn så döpte gruppen till åsna för jag inte hade något annat o döpa den till och fick stress o detta var det första jag kom o tänka på så det fick bli det. Includar font och center då det kommer finnas text i denna klassen. */
-  @include font(100px);
+  @include textsize(100px);
+  @include font;
   @include center;
 }
 
 .navbar{ /*Redigerar klassen navbar som är där man kommer kunna hoppa mellan texter.*/
   @include center;
-  @include font(25px);
+  @include font();
+  @include textsize(25px);
+
 }
 ul {
   list-style-type: none;
@@ -70,11 +78,14 @@ li {
 }
 .bakgrund{/* Redigerar "bakgrund" texten, det enda den behöver ändra är bakgrunden och för det har includat general mixinen tema där jag skrivit in grön altså ändrar den bakgrundsfärgen till grön*/
   @include tema(green);
+  @include storlek();
 }
 .familj{/* samma som i bakgrund klassen*/
   @include tema(blue);
+  @include storlek();
 }
 .karriär{/* samma som i de andra 2 klasserna och la en margin bottom då jag inte ville att texten skulle vara fastklistrad i botten av sidan */
   @include tema(red);
+  @include storlek();
   margin-bottom: 200px;
 }
