@@ -1,0 +1,80 @@
+@mixin center{ /* skapar en mixin center för att jag sedan ska kunna includa den i klasserna jag skapat. Det denna mixinen gör är att centrera alla items som befinner sig innanför den */
+  align-items: center;
+  text-align: center;
+}
+
+@mixin font ($r) /* Skapar en generell mixin, denna mixin kan ändras från klass till klass, jag har valt att man endast ska kunna välja font sizen genom att skriva $r i font sizen och i parenteserna efter jag skapat mixinen. Jag skrev $r för att ge det som man kan ändra en variabel. */
+{ 
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: $r;
+  color: white;
+}
+@mixin tema($r){ /* generell mixin där det enda man kan ändra är bakgrundsfärgen */
+  background-color: $r;
+  width: 100%;
+  height: fit-content;
+}
+@mixin bild(){ /* implementerad mixin som deffinerar höjden och bredden på bilderna jag har vid texterna i HTMLen.*/
+  width:200px;
+  height:200px; 
+}
+.grid{ /* Redigerar i klassen grid. Grid är en standard jag änvänt för att fixa så att bilderna är över varandra och inte all over hemsidan på ett snyggt sätt. */
+  display: grid; /* skapar en grid*/
+  grid-template-columns: repeat(1 ,100%);/* skapar kolumner för griden och bestämmer dess storlek*/
+  grid-template-rows: repeat(1, 50%);/* skapar rader i griden och sedan bestämmer dess storlek*/
+}
+.grid-item{ /* Redigerar gruppen grid item, här har jag includat font och center, font är för att bestämma texttypen, textstorleken och färgen på texten.*/
+  @include font(25px);
+  @include center;
+  margin-top: 1000px;/* bestämmer hur långt ifrån toppen av sidan denna klassen kommer att befinna sig*/
+}
+body{ /* Här är bakgrunden till hemsidan, laggt in en egen bild istället för att ha en färg*/
+  background-image:url("messi.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position:center;
+}
+.åsna{ /* hade slut på namn så döpte gruppen till åsna för jag inte hade något annat o döpa den till och fick stress o detta var det första jag kom o tänka på så det fick bli det. Includar font och center då det kommer finnas text i denna klassen. */
+  @include font(100px);
+  @include center;
+}
+
+.navbar{ /*Redigerar klassen navbar som är där man kommer kunna hoppa mellan texter.*/
+  @include center;
+  @include font(25px);
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+/* UL och LI är det jag änvänder mig av för att skapa den simpla navbaren i toppen av sidan.*/
+li {
+  @include font(25px);
+} 
+.minbild{ /* fixar med alla bilder brevid texterna*/
+  @include bild();
+}
+.video{ /* Redigerar klassen för videon jag har i toppen av sidan*/
+  @include center;
+  height:1000px;
+  width: 1000px;
+  margin-left: 17%;
+  margin-top: 200px;
+  
+}
+.extra video{ /* Inheritar height och width från videon, detta har jag implementerat i själva HTML koden där jag skrev height och width.*/
+  height: inherit;
+  width: inherit;
+  margin-left: 150px;
+}
+.bakgrund{/* Redigerar "bakgrund" texten, det enda den behöver ändra är bakgrunden och för det har includat general mixinen tema där jag skrivit in grön altså ändrar den bakgrundsfärgen till grön*/
+  @include tema(green);
+}
+.familj{/* samma som i bakgrund klassen*/
+  @include tema(blue);
+}
+.karriär{/* samma som i de andra 2 klasserna och la en margin bottom då jag inte ville att texten skulle vara fastklistrad i botten av sidan */
+  @include tema(red);
+  margin-bottom: 200px;
+}

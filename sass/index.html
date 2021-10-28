@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css"> <!-- Linkar min css till html en då html tar sin info från just css då det inte går att göra det från scssen. Scssen skapar en css och skriver allting från SCSS filen rakt in i CSSen. -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SASS</title> <!-- Ger hemsidan titeln SASS -->
+
+<body>
+    <div class="åsna"> <!-- Skapar en DIV med klassen åsna, det klassen gör är att jag sedan kan ändra det som står i DIVen utan att ändra alla DIVar i HTMLen.-->
+        <nav>The story of Lionel Messi</nav> <!-- Skapar en nav, naven ligger alltid högst upp på hemsidan och jag valde att skriva "The story of Lionel Messi" där för att den skulle komma upp på toppen av hemsidan-->
+    </div>
+    
+    <div class="navbar"> <!-- Skapar en DIV med klassen "navbar" här skapar jag även min navbar -->
+        <ul>
+            <li><a href="#bakgrund">bakgrund</a></li> <!-- href länkar ordet bakgrund till id: bakgrund så när man trycker på den så tas man dit, man kan även skriva in en länk, då tas man till den länken. -->
+            <li><a href="#familj">familj</a></li> <!-- Samma som förra fast med familj-->
+            <li><a href="#karriär">karriär</a></li> <!-- Samma igen fast med karriär-->
+            </ul>
+        </ul>
+    </div>
+    <iframe src="messi.mp4" frameborder="0" class="video"></iframe> <!-- Länkar så hemsidan displayar en video utan frame och ger den klassen "video"-->
+    <section> <!-- Section grupperar ihop allt som finns innuti den så den tillhör samma del-->
+        <div class="grid"> <!-- Skapar en div klass med namnet grid i sectionen, allt som skrivs nedan kommer tillhöra klassen grid-->
+            <div class="grid-item" id="bakgrund" ><img class="minbild" src="messi_barn.jpg" > <!-- Skapar en div med klassen grid-item, ger denna textbit id så att navbaren jag skapade längst uppe kan ta mig till den med ett klick-->
+                <p class="bakgrund"> Messi är en av de mest historiskt kända fotbollssplarna. Född 24e juni 1987 i Rosario Argentina, han började spela fotboll vid 5 års åldern för ett lag som heter Grandoli i hans hemstad. Vid 11 års åldern blev han diagnostiserad med growth hormone deficiency, en sjudkom som gör att den drabbade inte växer lika fort som ett vanligt barn och inte utväcklas fysiskt på samma sätt. Inget lag hade då råd att betala för hans behandling tills sports direktorn på FC Barcelona fick höra om honom och hans talang inom fotboll och offrade att betala för hans behandling om han flyttar och börjar ett nytt liv i Spanien. </p>
+            </div>
+            <img src="MessiRonaldo.jpg" alt="" class="extra" style="height: 1000px;" style="width: 1000px;"> <!-- Infogat en bild och fixade den med hjälp av inheritance, ger denna även height och width det var så jag var hänvisad att göra i w3schools-->
+            <div class="grid-item" id="familj"><img class="minbild" src="messi_famlij.jpg">
+                <p class="familj">Anonella Roccuzzo är Lionel Messis maka sedan 2017. Hon är en 33 årig kvinna född i Rosario, Argentina, samma stad som Messi var född och uppvuxen i. Dessa två har kännt varandra sedan de var barn och har varit tillsammans mer eller mindre hela livet. Messi har 3 barn och alla dessa är med samma kvinna altså Antonella, detta kommer inte som en chock då de varit tillsammans nästan hela livet. Messi gifte sig med Antonella i 2017 och hade sitt första barn i 2012 med namnet Thiago Messi. Sedan dess har de fått 2 barn till, ena i 2015 med namnet Mateo Mesi Rocuzzo och andra i 2018 med namnet Ciro Messi Roccuzzo. </p>
+            </div>
+            <div class="grid-item" id="karriär"><img class="minbild" src="messi_karriär.jpg">
+                <p class="karriär">Messi började spela i FC Barcelona, detta var hans första lag där han gjorde A-lag debuten. Han ökade snappt mellan lagen  från u16 till u19 b-lag till u19 a-lag. Han gjorde debut i FC Barcelonas senior a-lag när han var 16 år gammal i en match mot FC Porto. Den 1 Maj 2005 gjorde han sin första laliga match och även yngsta målgörare i FC Barcelonas kulbbhistoria. Den 28e september 2005 gjorde han championsleague debut mot Udinese men även fast han gjorde väldigt bra ifrån sig i sin debut så fick han inte spela i finalen på grund av en skada. Redan i sina tidiga år som proffs sades många klubbar ha haft sina ögon på honom och att Chelsea var berädda att betala ca 1.2 miljarder sek för honom. År 2009 efter att ha förlängt sitt kontrakt med Barca till 2016 vann han sin första Ballon D'or. 2010 gjorde han sitt 100e mål för Barca. Han vann även guldskon samma år. Kommande 3 åren i rad vann han Ballon D'or år efter år som placerade honom som en av de bästa spelarna i världshistorian. Sedan i 2015 och 2019 vann han ytterligare två Ballon D'or priser vilket placerade honom på nummer 1 i världen.  </p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,131 @@
+@charset "UTF-8";
+.grid {
+  /* Redigerar i klassen grid. Grid är en standard jag änvänt för att fixa så att bilderna är över varandra och inte all over hemsidan på ett snyggt sätt. */
+  display: -ms-grid;
+  display: grid;
+  /* skapar en grid*/
+  -ms-grid-columns: (100%)[1];
+      grid-template-columns: repeat(1, 100%);
+  /* skapar kolumner för griden och bestämmer dess storlek*/
+  -ms-grid-rows: (50%)[1];
+      grid-template-rows: repeat(1, 50%);
+  /* skapar rader i griden och sedan bestämmer dess storlek*/
+}
+
+.grid-item {
+  /* Redigerar gruppen grid item, här har jag includat font och center, font är för att bestämma texttypen, textstorleken och färgen på texten.*/
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  color: white;
+  /* skapar en mixin center för att jag sedan ska kunna includa den i klasserna jag skapat. Det denna mixinen gör är att centrera alla items som befinner sig innanför den */
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  margin-top: 1000px;
+  /* bestämmer hur långt ifrån toppen av sidan denna klassen kommer att befinna sig*/
+}
+
+body {
+  /* Här är bakgrunden till hemsidan, laggt in en egen bild istället för att ha en färg*/
+  background-image: url("messi.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.åsna {
+  /* hade slut på namn så döpte gruppen till åsna för jag inte hade något annat o döpa den till och fick stress o detta var det första jag kom o tänka på så det fick bli det. Includar font och center då det kommer finnas text i denna klassen. */
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+  color: white;
+  /* skapar en mixin center för att jag sedan ska kunna includa den i klasserna jag skapat. Det denna mixinen gör är att centrera alla items som befinner sig innanför den */
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.navbar {
+  /*Redigerar klassen navbar som är där man kommer kunna hoppa mellan texter.*/
+  /* skapar en mixin center för att jag sedan ska kunna includa den i klasserna jag skapat. Det denna mixinen gör är att centrera alla items som befinner sig innanför den */
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  color: white;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* UL och LI är det jag änvänder mig av för att skapa den simpla navbaren i toppen av sidan.*/
+li {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  color: white;
+}
+
+.minbild {
+  /* fixar med alla bilder brevid texterna*/
+  /* implementerad mixin som deffinerar höjden och bredden på bilderna jag har vid texterna i HTMLen.*/
+  width: 200px;
+  height: 200px;
+}
+
+.video {
+  /* Redigerar klassen för videon jag har i toppen av sidan*/
+  /* skapar en mixin center för att jag sedan ska kunna includa den i klasserna jag skapat. Det denna mixinen gör är att centrera alla items som befinner sig innanför den */
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  height: 1000px;
+  width: 1000px;
+  margin-left: 17%;
+  margin-top: 200px;
+}
+
+.extra video {
+  /* Inheritar height och width från videon, detta har jag implementerat i själva HTML koden där jag skrev height och width.*/
+  height: inherit;
+  width: inherit;
+  margin-left: 150px;
+}
+
+.bakgrund {
+  /* Redigerar "bakgrund" texten, det enda den behöver ändra är bakgrunden och för det har includat general mixinen tema där jag skrivit in grön altså ändrar den bakgrundsfärgen till grön*/
+  /* generell mixin där det enda man kan ändra är bakgrundsfärgen */
+  background-color: green;
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.familj {
+  /* samma som i bakgrund klassen*/
+  /* generell mixin där det enda man kan ändra är bakgrundsfärgen */
+  background-color: blue;
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.karriär {
+  /* samma som i de andra 2 klasserna och la en margin bottom då jag inte ville att texten skulle vara fastklistrad i botten av sidan */
+  /* generell mixin där det enda man kan ändra är bakgrundsfärgen */
+  background-color: red;
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin-bottom: 200px;
+}
+/*# sourceMappingURL=style.css.map */
